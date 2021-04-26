@@ -17,18 +17,18 @@
     </div>
     <div class="p-3">
         <dl class="mt-1 grid grid-cols-1 gap-3">
-            <div v-for="item in educations" :key="item.id" class="relative bg-white py-5 px-4 sm:py-6 sm:px-6 shadow rounded-lg overflow-hidden border border-gray-300">
+            <div v-for="item in educations" :key="item.id" class="relative bg-white py-5 px-4 sm:py-6 sm:px-6 shadow rounded-lg overflow-hidden border border-gray-400">
                 <dt>
                     <div class="absolute bg-indigo-500 rounded-md p-3">
                         <component :is="item.icon" class="h-11 w-11 text-white" aria-hidden="true" />
                     </div>
-                    <p class="ml-20 text-sm font-medium text-gray-900 truncate">{{ item.sekolah }}</p>
+                    <p class="ml-20 font-medium text-gray-900 truncate">{{ item.sekolah }}</p>
                 </dt>
                 <dd class="ml-20 items-baseline">
                     <p class="font-semibold text-gray-500">
                         {{ item.gelar+', '+item.jurusan+', '+item.nilai }}
                     </p>
-                    <p class="font-semibold text-gray-400">
+                    <p class="text-sm font-semibold text-gray-400">
                         {{ item.mulai+' - '+item.selesai }}
                     </p>
                 </dd>

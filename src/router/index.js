@@ -5,6 +5,7 @@ import Layout from "../components/Layout.vue"
 import Home from "../pages/Home.vue"
 import Pekerjaan from "../pages/Pekerjaan.vue"
 import Pendidikan from "../pages/Pendidikan.vue"
+import Skill from "../pages/Skill.vue"
 import P404 from "../pages/404.vue"
 
 const routes = [
@@ -21,6 +22,11 @@ const routes = [
                 path : '/experience',
                 component : Pekerjaan,
                 name : 'Experience',
+            },
+            {
+                path : '/skill',
+                component : Skill,
+                name : 'Skill',
             },
             {
                 path : '/education',

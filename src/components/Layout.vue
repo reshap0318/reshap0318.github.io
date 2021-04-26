@@ -31,12 +31,10 @@
                     Sosial Media
                   </h3>
                   <div class="mt-1 space-y-1" role="group" aria-labelledby="sosmeds-headline">
-                    <a v-for="sosmed in sosmeds" :key="sosmed.name" :href="sosmed.href" class="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-                      <span :class="[sosmed.bgColorClass, 'w-2.5 h-2.5 mr-4 rounded-full']" aria-hidden="true" />
-                      <span class="truncate">
+                    <a v-for="sosmed in sosmeds" :key="sosmed.type" :href="sosmed.href" class="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                      <div v-html="sosmed.icon" class="px-0.5"></div>
                         {{ sosmed.name }}
-                      </span>
-                    </a>
+                      </a>
                   </div>
                 </div>
               </nav>
@@ -159,17 +157,8 @@
         TransitionChild,
         TransitionRoot,
     } from '@headlessui/vue'
-    import { DesktopComputerIcon, HomeIcon, MenuAlt1Icon, IdentificationIcon, XIcon } from '@heroicons/vue/outline'
-    import {
-        ChevronRightIcon,
-        DotsVerticalIcon,
-        DuplicateIcon,
-        PencilAltIcon,
-        SearchIcon,
-        SelectorIcon,
-        TrashIcon,
-        UserAddIcon,
-    } from '@heroicons/vue/solid'
+    import { DesktopComputerIcon, HomeIcon, MenuAlt1Icon, IdentificationIcon, XIcon, BriefcaseIcon } from '@heroicons/vue/outline'
+    import { SearchIcon } from '@heroicons/vue/solid'
 
     export default {
       components: {
@@ -181,25 +170,18 @@
           MenuItems,
           TransitionChild,
           TransitionRoot,
-          ChevronRightIcon,
-          DotsVerticalIcon,
-          DuplicateIcon,
           MenuAlt1Icon,
-          PencilAltIcon,
           SearchIcon,
-          SelectorIcon,
-          TrashIcon,
-          UserAddIcon,
           XIcon,
       },
 
       data(){
-
           return {
               navigation : [
                   { name: 'Home', href: '/', icon: HomeIcon, current: true },
                   { name: 'Educations', href: '/education', icon: IdentificationIcon, current: false },
-                  { name: 'Experience', href: '/experience', icon: DesktopComputerIcon, current: false },
+                  { name: 'Skill', href: '/skill', icon: DesktopComputerIcon, current: false },
+                  { name: 'Experience', href: '/experience', icon: BriefcaseIcon, current: false },
               ],
               sosmeds : [
                   { 
@@ -230,6 +212,10 @@
               sidebarOpen : ref(false),
               updatedAt : "04 April 2021"
           }
+      },
+
+      methods() {
+          
       }
     }
 </script>

@@ -75,7 +75,7 @@
           <!-- Navigation -->
           <nav class="px-3 mt-6">
             <div class="space-y-1">
-              <router-link v-for="item in navigation" :key="item.name" :to="item.href" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50', 'group flex items-center px-2 py-2 text-sm font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined">
+              <router-link v-for="item in navigation" :key="item.name" :to="item.href" :class="[item.current ? 'bg-gray-200 text-gray-900' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50', 'group flex items-center px-2 py-2 text-sm font-medium rounded-md']" :aria-current="item.current ? 'page' : undefined" v-on:click="changeActiveNavigation(item.name)">
                 <component :is="item.icon" :class="[item.current ? 'text-gray-500' : 'text-gray-400 group-hover:text-gray-500', 'mr-3 h-6 w-6']" aria-hidden="true" />
                 {{ item.name }}
               </router-link>
@@ -178,8 +178,8 @@
       data(){
           return {
               navigation : [
-                  { name: 'Home', href: '/', icon: HomeIcon, current: true },
-                  { name: 'Educations', href: '/education', icon: IdentificationIcon, current: false },
+                  { name: 'Home', href: '/', icon: HomeIcon, current: false },
+                  { name: 'Education', href: '/education', icon: IdentificationIcon, current: false },
                   { name: 'Skill', href: '/skill', icon: DesktopComputerIcon, current: false },
                   { name: 'Experience', href: '/experience', icon: BriefcaseIcon, current: false },
               ],
@@ -214,8 +214,20 @@
           }
       },
 
-      methods() {
-          
+      methods : {
+          changeActiveNavigation(name){
+            this.navigation.map(data => data.current = false)
+            this.navigation.map(data => {
+              if(data.name === name){
+                data.current = true
+              }
+            })
+          }
+      },
+
+      mounted() {
+        let routeName = this.$route.name;
+        this.changeActiveNavigation(routeName);
       }
     }
 </script>

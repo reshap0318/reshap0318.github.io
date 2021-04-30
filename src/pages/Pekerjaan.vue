@@ -4,9 +4,9 @@
     <div class="flow-root px-12 py-6">
         <ul class="-mb-8">
             <li v-for="(experience, experienceIndex) in experiences" :key="experience.id">
-                <div class="relative pb-8">
+                <div class="pb-8">
                     <span v-if="(experienceIndex !== experiences.length - 1)" class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
-                    <div class="relative flex items-start space-x-3">
+                    <div class="flex items-start space-x-3">
                         <div class="relative">
                                 <span :class="[experience.bgColor,'h-10 w-10 rounded-full flex items-center justify-center ring-8 ring-white']">
                                     <BriefcaseIcon class="h-5 w-5 text-white" aria-hidden="true" />

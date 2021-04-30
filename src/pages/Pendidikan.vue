@@ -1,8 +1,8 @@
 <template>
-    <Header title="Education" :updatedAt="updatedAt" />
+    <Header title="Education" :updatedAt="updatedAt" /> 
     <div class="p-3">
-        <dl class="mt-1 grid grid-cols-1 gap-3">
-            <div v-for="item in educations" :key="item.id" class="relative bg-white py-5 px-4 sm:py-6 sm:px-6 shadow rounded-lg overflow-hidden border border-gray-400">
+        <dl class="mt-3 grid grid-cols-1 gap-5 sm:gap-5 sm:grid-cols-1 lg:grid-cols-1">
+            <div v-for="item in educations" :key="item.id" class="bg-white py-5 px-4 sm:py-6 sm:px-6 shadow rounded-lg overflow-hidden border border-gray-400">
                 <dt>
                     <div class="absolute bg-indigo-500 rounded-md p-3">
                         <component :is="item.icon" class="h-11 w-11 text-white" aria-hidden="true" />

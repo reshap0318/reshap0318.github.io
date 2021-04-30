@@ -1,5 +1,5 @@
 <template>
-    <Header title="Curiculum Vitae" updatedAt="04 April 2021"/>
+    <Header title="Curiculum Vitae" updatedAt="30 April 2021"/>
     <div class="px-12 py-6">
         <img src="../assets/cv/v3.png" alt="">
     </div>

@@ -6,10 +6,10 @@
         </h1>
         </div>
         <div class="mt-4 flex sm:mt-0 sm:ml-4">
-        <button type="button" class="order-1 ml-3 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:order-0 sm:ml-0">
+        <button type="button" class="order-0 ml-3 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
             Last Update, {{ updatedAt }}
         </button>
-        <Menu as="div" class="order-0 relative inline-block text-left sm:order-1 sm:ml-3">
+        <Menu as="div" class="order-1 relative inline-block text-left ml-3">
             <div>
                 <MenuButton class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                     Contact

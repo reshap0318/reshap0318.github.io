@@ -5,19 +5,12 @@ services:
       context: .
       dockerfile: ./docker/node/Dockerfile
     image: portofolio.me/node:10.24.1
-    container_name: app.portofolio
+    container_name: portofolio-v1.app
     restart: unless-stopped
     tty: true
     environment:
       TZ : Asia/Jakarta
     working_dir: /app
-    networks:
-      - portofolio-networks
+    network_mode: bridge
     ports:
       - 1004:5000
-
-#Networks
-networks:
-  portofolio-networks:
-    driver: bridge
-    name: portofolio-networks
